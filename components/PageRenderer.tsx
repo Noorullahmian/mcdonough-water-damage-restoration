@@ -4,6 +4,13 @@ import Link from "next/link";
 import { MapEmbed, PHONE, TEL } from "./Chrome";
 import cardImages from "../data/card-images.json";
 
+// GitHub Pages project sites live under a subpath (e.g. /mcdonough-water-damage-restoration).
+// Build with NEXT_PUBLIC_BASE_PATH set to that subpath and plain <img> srcs get the same
+// prefix here (next/link already prefixes navigation automatically). Root deploys build
+// without the env var and this prefix is empty, so the same code serves both.
+const BP = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const imgSrc = (s?: string) => (s && s.startsWith("/") ? BP + s : s);
+
 export type Block =
   | { type: "p"; text: string }
   | { type: "step"; text: string }
@@ -161,7 +168,7 @@ export default function PageRenderer({ page, heroImg, heroAlt, secondImg, second
               const label = b.items[j];
               return (
                 <article className="area-card" key={j}>
-                  {area && <div className="area-card-media"><img src={area.src} alt={area.alt} loading="lazy" width="800" height="500" /></div>}
+                  {area && <div className="area-card-media"><img src={imgSrc(area.src)} alt={area.alt} loading="lazy" width="800" height="500" /></div>}
                   <div className="area-card-body">
                     {href === self ? <span style={{ fontWeight: 800, color: "#0B2F4A" }}>{label}</span> : <Link href={href}>{label}</Link>}
                   </div>
@@ -195,7 +202,7 @@ export default function PageRenderer({ page, heroImg, heroAlt, secondImg, second
           const card = (cardImages as Record<string, { src: string; alt: string }>)[`card:${it.slug}`];
           return (
             <article className="svc-card" key={j}>
-              {card && <div className="svc-card-media"><img src={card.src} alt={card.alt} loading="lazy" width="800" height="500" /></div>}
+              {card && <div className="svc-card-media"><img src={imgSrc(card.src)} alt={card.alt} loading="lazy" width="800" height="500" /></div>}
               <div className="svc-card-body">
                 {it.slug === self.replace(/\/$/, "/") || `/${it.slug}/` === self
                   ? <span style={{ fontWeight: 800, color: "#0B2F4A", fontSize: "1.12rem" }}>{it.name}:</span>
@@ -246,7 +253,7 @@ export default function PageRenderer({ page, heroImg, heroAlt, secondImg, second
     if (!secondInserted && secondImg) {
       sections.push(
         <section className="section" key={secKey++}><div className="section-inner">
-          <figure className="figure"><img src={secondImg} alt={secondAlt || ""} loading="lazy" width="1100" height="420" /><figcaption>{secondAlt || ""}</figcaption></figure>
+          <figure className="figure"><img src={imgSrc(secondImg)} alt={secondAlt || ""} loading="lazy" width="1100" height="420" /><figcaption>{secondAlt || ""}</figcaption></figure>
         </div></section>
       );
       secondInserted = true;
@@ -281,11 +288,11 @@ export default function PageRenderer({ page, heroImg, heroAlt, secondImg, second
           {lead && <p className="lead">{lead}</p>}
           <div className="hero-actions">
             <a className="btn btn-call" href={TEL}>Call {PHONE}</a>
-            <a className="btn btn-outline" href={page.slug === "/contact-us/" ? "#contact-form" : "/contact-us/"}>Request Help</a>
+            <Link className="btn btn-outline" href={page.slug === "/contact-us/" ? "#contact-form" : "/contact-us/"}>Request Help</Link>
           </div>
           {trustChips.length > 0 && <div className="chips">{trustChips.map((c, i) => <span className="chip" key={i}>{c}</span>)}</div>}
         </div>
-        {heroImg && <figure className="hero-img"><img src={heroImg} alt={heroAlt || ""} width="760" height="570" /><figcaption>{heroAlt || ""}</figcaption></figure>}
+        {heroImg && <figure className="hero-img"><img src={imgSrc(heroImg)} alt={heroAlt || ""} width="760" height="570" /><figcaption>{heroAlt || ""}</figcaption></figure>}
       </div></section>
       {sections}
       {!hasMapMarker && (
