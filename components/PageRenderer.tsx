@@ -11,6 +11,30 @@ import cardImages from "../data/card-images.json";
 const BP = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const imgSrc = (s?: string) => (s && s.startsWith("/") ? BP + s : s);
 
+// Live site base (GitHub Pages URL, verified live in the deploy round). Used ONLY as
+// schema @id/url identifiers; if a real domain is ever confirmed, repoint this one const.
+const SITE_URL = "https://noorullahmian.github.io/mcdonough-water-damage-restoration";
+const ORG_ID = `${SITE_URL}/#organization`;
+const SITE_ID = `${SITE_URL}/#website`;
+// Service display names, copied verbatim from the homepage's own service cards.
+const SERVICE_NAMES: Record<string, string> = {
+  "emergency-water-extraction": "Emergency Water Extraction",
+  "burst-pipe-water-damage": "Burst & Frozen Pipe Water Damage",
+  "flood-damage-cleanup": "Flood & Storm Damage Cleanup",
+  "sewage-backup-cleanup": "Sewage Backup Cleanup",
+  "ceiling-leak-water-damage": "Ceiling & Roof Leak Water Damage",
+  "structural-drying": "Structural Drying & Dehumidification",
+  "mold-remediation": "Mold Remediation",
+  "hardwood-floor-water-damage": "Hardwood Floor Water Damage",
+  "crawl-space-water-damage": "Crawl Space Water Damage",
+  "slab-leak-water-damage": "Slab Leak Water Damage",
+  "water-heater-leak-cleanup": "Water Heater Leak Cleanup",
+  "appliance-leak-water-damage": "Washing Machine, Dishwasher & Fridge Leaks",
+  "ac-leak-water-damage": "AC & HVAC Leak Water Damage",
+  "toilet-overflow-cleanup": "Toilet Overflow & Bathroom Leaks",
+  "commercial-water-damage": "Commercial Water Damage Restoration",
+};
+
 export type Block =
   | { type: "p"; text: string }
   | { type: "step"; text: string }
@@ -74,7 +98,10 @@ function linkify(text: string, self: string, used: Set<string>, keyPrefix: strin
     let linked = false;
     parts.forEach((part, pi) => {
       if (typeof part !== "string" || linked) { next.push(part); return; }
-      const m = part.match(re);
+      // Round 9 fix: part.match() with a /g/ regex returns no .index, so the old code
+      // took the no-match branch every time and this function linked NOTHING sitewide
+      // (Round 8's "self-links []" was vacuous). A non-global exec returns the index.
+      const m = new RegExp(re.source, "i").exec(part);
       if (!m || m.index === undefined) { next.push(part); return; }
       linked = true; used.add(href);
       const before = part.slice(0, m.index);
@@ -259,6 +286,23 @@ export default function PageRenderer({ page, heroImg, heroAlt, secondImg, second
       secondInserted = true;
     }
   };
+  // User order (live review, 2026-11-03): the extra Call button that sat right after the hero
+  // (the cta block at index 1 on every page) must sit BELOW the intro paragraphs, not above
+  // them. So in the FIRST blocks group, cta blocks move to just BEFORE the first h2/h3 in
+  // that group (after the intro paragraphs) — NOT to the end of the group, because a blocks
+  // group keeps flowing past its first h2, and end-of-group would drop the button into the
+  // next section (measured wrong on the first attempt: button landed in the steps section).
+  // No words change, no other cta (e.g. the closing one at the end of each page) moves.
+  {
+    const first = groups.find((g) => g.kind === "blocks");
+    if (first && first.kind === "blocks") {
+      const h2Idx = first.items.findIndex(([b]) => b.type === "h2" || b.type === "h3");
+      const end = h2Idx >= 0 ? h2Idx : first.items.length;
+      const head = first.items.slice(0, end);
+      const ctas = head.filter(([b]) => b.type === "cta");
+      if (ctas.length) first.items = [...head.filter(([b]) => b.type !== "cta"), ...ctas, ...first.items.slice(end)];
+    }
+  }
   groups.forEach((g) => {
     if (g.kind === "steps") {
       secBlocks.push(<ol className="steps" key={`steps-${secKey}-${secBlocks.length}`}>{g.items.map((s, j) => <li key={j}>{leadBold(s)}</li>)}</ol>);
@@ -275,10 +319,96 @@ export default function PageRenderer({ page, heroImg, heroAlt, secondImg, second
     }
   });
   pushSection();
+  // ---- Round 9 schema: one @graph per page. WebPage + BreadcrumbList on every page;
+  // Service on service pages (that service) and city pages (water damage restoration in
+  // that city, with a catalog of ONLY the services this page's own text actually links);
+  // homepage Service with a catalog of its own service-card menu (15 services, deduped);
+  // FAQPage exactly equal to the visible FAQs (same blocks, same text). The org node
+  // itself lives ONLY on the homepage (app/page.tsx, @id ORG_ID); here it is referenced,
+  // never duplicated. No ratings, prices, certifications, address, geo, logo or socials
+  // anywhere — nothing the site itself does not state.
+  const pageUrl = `${SITE_URL}${self}`;
+  const shortName = page.title.split(" | ")[0];
+  const crumbs: Array<Record<string, unknown>> = [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+  ];
+  if (self !== "/") crumbs.push({ "@type": "ListItem", position: 2, name: shortName, item: pageUrl });
+  const areaHome: Array<Record<string, string>> = [
+    { "@type": "City", name: "McDonough, GA" },
+    { "@type": "AdministrativeArea", name: "Henry County, GA" },
+  ];
+  const graph: Array<Record<string, unknown>> = [
+    {
+      "@type": "WebPage", "@id": `${pageUrl}#webpage`, url: pageUrl, name: page.title,
+      isPartOf: { "@id": SITE_ID }, about: { "@id": ORG_ID },
+      breadcrumb: { "@id": `${pageUrl}#breadcrumb` }, inLanguage: "en",
+    },
+    { "@type": "BreadcrumbList", "@id": `${pageUrl}#breadcrumb`, itemListElement: crumbs },
+  ];
+  const slugKey = self.replace(/\//g, "");
+  const cityHit = CITY_LINKS.find(([, href]) => href === self);
+  if (self === "/") {
+    const seen = new Set<string>();
+    const catalog: Array<Record<string, unknown>> = [];
+    page.blocks.forEach((b) => {
+      if (b.type !== "servicecards") return;
+      b.items.forEach((it) => {
+        if (seen.has(it.slug)) return;
+        seen.add(it.slug);
+        catalog.push({
+          "@type": "Offer", itemOffered: {
+            "@type": "Service", name: it.name, url: `${SITE_URL}/${it.slug}/`,
+            provider: { "@id": ORG_ID }, areaServed: areaHome,
+          },
+        });
+      });
+    });
+    graph.push({
+      "@type": "Service", "@id": `${pageUrl}#service`, name: "Water Damage Restoration",
+      description: page.meta, provider: { "@id": ORG_ID }, areaServed: areaHome,
+      hasOfferCatalog: {
+        "@type": "OfferCatalog", name: "Water Damage Restoration Services",
+        itemListElement: catalog,
+      },
+    });
+  } else if (SERVICE_NAMES[slugKey]) {
+    graph.push({
+      "@type": "Service", "@id": `${pageUrl}#service`, name: SERVICE_NAMES[slugKey],
+      description: page.meta, provider: { "@id": ORG_ID }, areaServed: areaHome,
+    });
+  } else if (cityHit) {
+    const cityName = `${cityHit[0]}, GA`;
+    const linked: Array<Record<string, unknown>> = [...used]
+      .filter((h) => { const k = h.replace(/\//g, ""); return !!SERVICE_NAMES[k]; })
+      .map((h) => {
+        const k = h.replace(/\//g, "");
+        return {
+          "@type": "Offer", itemOffered: {
+            "@type": "Service", name: SERVICE_NAMES[k], url: `${SITE_URL}/${k}/`,
+            provider: { "@id": ORG_ID }, areaServed: [{ "@type": "City", name: cityName }],
+          },
+        };
+      });
+    const cityService: Record<string, unknown> = {
+      "@type": "Service", "@id": `${pageUrl}#service`,
+      name: `Water Damage Restoration in ${cityName}`,
+      description: page.meta, provider: { "@id": ORG_ID },
+      areaServed: [{ "@type": "City", name: cityName }],
+    };
+    if (linked.length) {
+      cityService.hasOfferCatalog = {
+        "@type": "OfferCatalog", name: `Water Damage Restoration Services in ${cityName}`,
+        itemListElement: linked,
+      };
+    }
+    graph.push(cityService);
+  }
   const faqSchema = faqs.length ? {
-    "@context": "https://schema.org", "@type": "FAQPage",
+    "@type": "FAQPage",
     mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
   } : null;
+  if (faqSchema) graph.push(faqSchema);
+  const pageSchema = { "@context": "https://schema.org", "@graph": graph };
   return (
     <>
       <section className="hero"><div className="hero-inner">
@@ -301,7 +431,7 @@ export default function PageRenderer({ page, heroImg, heroAlt, secondImg, second
           <MapEmbed place={mapPlace} title={mapTitle} />
         </div></section>
       )}
-      {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
+      {pageSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />}
     </>
   );
 }

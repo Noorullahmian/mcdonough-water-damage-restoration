@@ -70,9 +70,9 @@ export function Header({ current: _current }: { current: string }) {
   return (
     <>
       <div className="topbar"><div className="topbar-inner">
-        <span className="topbar-cue">📞 Call Now · Open 24 Hours</span>
+        <span className="topbar-cue"><span className="topbar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" /></svg></span>Call Now · Open 24 Hours</span>
         <a className="topbar-call" href={TEL}>{PHONE}</a>
-        <span className="topbar-info">McDonough &amp; Henry County · Insurance paperwork help</span>
+        <span className="topbar-info">McDonough &amp; Henry County</span>
       </div></div>
       <header className="site-header">
       <div className="header-inner">
@@ -109,9 +109,9 @@ export function Footer() {
       <div className="footer-inner">
         <div>
           <h3>About</h3>
-          <p><strong style={{ color: "#fff" }}>McDonough Water Damage Restoration</strong></p>
+          <p className="footer-brand"><span className="brand-mark" aria-hidden="true">M</span><strong style={{ color: "#fff" }}>McDonough Water Damage Restoration</strong></p>
           <p>24/7 water damage restoration for homes and businesses in McDonough and the south metro Atlanta area: water extraction, structural drying, sewage cleanup, mold remediation and repairs.</p>
-          <p>Phone: <a href={TEL}>{PHONE}</a><br />Hours: Open 24 hours, 7 days a week<br />Service area: McDonough, GA 30252 &amp; 30253 and Henry County</p>
+          <p>Phone: <a className="footer-phone" href={TEL}>{PHONE}</a><br />Hours: Open 24 hours, 7 days a week<br />Service area: McDonough, GA 30252 &amp; 30253 and Henry County</p>
         </div>
         <div>
           <h3>Water Damage Services</h3>
@@ -130,7 +130,7 @@ export function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        © 2026 McDonough Water Damage Restoration · <Link href="/about-us/">About</Link> · <Link href="/contact-us/">Contact</Link> · Privacy Policy · Terms
+        © 2026 McDonough Water Damage Restoration · <Link href="/about-us/">About</Link> · <Link href="/contact-us/">Contact</Link> · <Link href="/privacy-policy/">Privacy Policy</Link> · <Link href="/terms-of-use/">Terms</Link>
       </div>
       <a className="callbar" href={TEL}>📞 Call Now {PHONE}</a>
     </footer>

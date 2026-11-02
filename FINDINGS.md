@@ -450,3 +450,154 @@ self-link fix below was built before the QA/header/section runs).
    links, if wanted. 5. Correction of the call-bar reading if he meant something
    else (Round 5 reading stands). 6. Provably town-specific city photos, if
    wanted (needs his own town photos or a licensed per-town search).
+
+## Round 9 — 10x A-to-Z review + killer-level schema (2026-11-03, LOCAL ONLY, not pushed)
+
+Scope: all 29 pages (27 original + /privacy-policy/ + /terms-of-use/). Build:
+`NEXT_PUBLIC_BASE_PATH=/mcdonough-water-damage-restoration npm run build`, served
+under a true subpath simulation (/tmp/r9test symlink, ports 8965–8969, 8971–8974).
+Homepage-title guard passed on every run. Parent edits preserved untouched: the
+Services-dropdown + mobile-nav scrollers in app/globals.css, and the favicon
+BASE + icons block in app/layout.tsx (only the org <script> moved out of layout).
+
+### Defect 1 (GENUINE, pre-existing, fixed): internal linking was dead sitewide
+- **Finding:** `linkify()` in components/PageRenderer.tsx used `part.match(re)` with
+  /gi/ regexes. String.match with a global flag returns NO `.index`, so the
+  `m.index === undefined` branch fired every time and the function linked NOTHING.
+  Proof on the pre-fix build: every page's <main> contained only tel / contact /
+  maps hrefs — zero service or city links anywhere. Round 8's "self-links []"
+  was vacuous (there were no links at all to be self-links).
+- **Fix (no word changes, scoped to that one function):** match via a non-global
+  exec — `new RegExp(re.source, "i").exec(part)` — so the index exists again.
+  First-occurrence-per-target and self-skip behaviour unchanged.
+- **Re-verified on the final build:** emergency page now links 5 services + home;
+  Stockbridge links 6 services + home; static checks still self = [] on 29/29
+  (the skip works); all new hrefs resolve under the base path (next/link
+  prefixes navigation). Visible in pixels: the emergency intro crop shows the
+  new "water damage restoration in McDonough" link inside the intro paragraph.
+
+### Defect 2 (validator, not site): FAQ-equality checker gave false mismatches
+- Three validator bugs found and fixed in scripts/round9_schema.py while proving
+  FAQ equality: (a) visible text was not HTML-unescaped (`&#x27;` vs `'`);
+  (b) a full-body `<details>` regex caught the header mobile-nav `<details>`
+  first and produced a garbage first pair — scope fixed to `<main>` with scripts
+  stripped; (c) tag-stripping with " " turned "cleanup." into "cleanup ." at a
+  link boundary (Hampton) — tags now stripped with "". The schema itself was
+  correct in all three cases; final result is a true 148 = 148 (see below).
+
+### Schema upgrade (user order: "bahut heavy wala", still 100% truthful)
+- Org moved out of layout into app/page.tsx ONLY: HomeAndConstructionBusiness
+  with `@id` = live Pages URL + `/#organization` (name, phone, Mo-Su 00:00-24:00,
+  the original McDonough ZIPs + Henry County areaServed string, original
+  description — nothing added, nothing invented). Every other page references
+  that `@id`, never duplicates a full org.
+- WebSite node on the homepage (`/#website`, publisher = org `@id`).
+- WebPage + BreadcrumbList on all 29 pages (Home > current; homepage = Home only).
+- Service nodes: 15 service pages (that service, provider `@id` ref, areaServed
+  McDonough GA + Henry County GA); 9 city pages ("Water Damage Restoration in
+  {City}, GA", areaServed = that city) with hasOfferCatalog of ONLY the services
+  that page's own text links (6/7/5/4/6/6/6/6/6 across the 9 cities — these
+  catalogs exist only because of Defect 1's fix); homepage Service with a
+  15-offer catalog from its own service-card menu (deduped).
+- FAQPage kept exactly equal to visible FAQs (same blocks, same text).
+- Validation (scripts/round9_schema.py → screenshots/round9/schema.json):
+  29/29 pages, 0 JSON parse errors, WebPage name == <title> 29/29, breadcrumb
+  counts correct 29/29, provider refs correct 29/29, FAQ 148 visible = 148
+  schema with 0 mismatches, banned items ZERO (no AggregateRating, reviews,
+  prices, certifications, licenses, address, geo, logo, socials, AI word).
+- Schema `@id`/url values point at the live GitHub Pages URL. If a real domain
+  is ever confirmed, repoint the single SITE_URL const in PageRenderer.tsx and
+  the matching literals in app/page.tsx, privacy-policy and terms-of-use pages,
+  then rebuild. Full per-type table: screenshots/round9/schema-report.md.
+- STATED PLAINLY: schema helps Google understand the pages and is a verified
+  on-page foundation. It does NOT guarantee ranking — ranking is Google's
+  decision, and no claim otherwise is made anywhere in this round.
+
+### Favicon (parent-built, Round 9 verified, not altered)
+- out/index.html carries all three link tags with the base-path prefix;
+  favicon.ico (5,018 B), favicon-48x48.png (2,198 B, exactly 48x48 — a multiple
+  of 48 as Google requires), apple-touch-icon.png (11,230 B, 180x180) all return
+  200 under the base path; robots.txt is `Allow: /`, so nothing blocks them.
+  favicon-master.png exists but is referenced by NO link tag, as instructed.
+- Honest limit: Google re-crawls and updates the favicon on its own schedule;
+  pickup timing is Google's decision, not instant.
+
+### 10x audit results (all on the FINAL build, after the schema + linkify rebuild)
+- Static checks (scripts/round9_checks.py → screenshots/round9/checks.json):
+  29/29 HTTP 200, H1 = 1 everywhere, 0 missing images, all images attributed
+  with width/height AND the base `img{height:auto}` safeguard present,
+  banned phrases ZERO, bracket markers ZERO, body self-links ZERO, titles ≤60
+  chars, metas ≤160 chars. (An early run's "missing=26/2" flags were a serving
+  artifact — out/ served at root while srcs carry the Pages prefix — and
+  vanished under the correct subpath simulation; logged, not hidden.)
+- Full-page QA (screenshots/round9/measurements.json, 29 pages × 1366/390 +
+  320/768/1024 overflow): H1 = 1 on 29/29, 0 broken images, overflow 0 at every
+  width, dropdown hover + Escape True on 29/29, mobile menu opens True on 29/29
+  (capture artifact — the QA script opens it to verify; default state is
+  closed). H1 orphans identical to Round 8's own measurements: desktop 1
+  (About), mobile 1 (About) — the linkify fix caused NO wrap regression
+  (overflow and H1-line tables diffed against Round 8: only the 2 new pages
+  differ). Microcopy under 17px is unchanged from Round 8 (topbar-info 15.2,
+  footer small 12.8, nav 16.8, eyebrow 15.2, figcaption 16.8, chips 16) — UI
+  microcopy, not body text (body 21px desktop / 19px mobile). Counts differ
+  from Round 8 only by the 2 new pages, plus the ordered topbar change (the
+  old 15.2px topbar-cue text node is gone because the cue is now the SVG icon).
+- Header run (screenshots/round9/header-check.json, 29 pages × 1366/1024/390/
+  320): overflow 0 everywhere, header-inner never overflows (incl. 1024),
+  scroll-away passes everywhere (header top 0, topbar bottom < 0 after scroll),
+  all VISIBLE taps ≥44px (header call 52 desktop, callbar 59 mobile, menu
+  button 44 mobile; the recorded 0s are display:none elements at that
+  viewport, not defects, per check 14). Footer 1 row desktop / 4 stacked rows
+  mobile (stacked = expected). Topbar text identical on 29/29: "CALL NOW ·
+  OPEN 24 HOURS | (470) 745-9798 | McDonough & Henry County" — no "Insurance
+  paperwork help", real SVG phone icon in a gold circle, no 📞 emoji in the
+  topbar (the sticky mobile call bar's 📞 was left alone, as ordered).
+- Per-section run (screenshots/round9/sections.json, 944 measurements):
+  hero call visible above the 900px fold on all 27 content pages (worst: About
+  mobile 896 — tight, standing note from Round 7, not a defect); 0 bad images;
+  hero renders 372×279 desktop (4:3) and 276×172 mobile (16:10) on all 27;
+  first-heading colours ONLY navy H1, aqua H2, white footer; footer present on
+  all 29. The section script CRASHED on the first attempt at /privacy-policy/
+  (no .hero element → getBoundingClientRect of null); owned plainly here, the
+  script was guarded (hero pushed only if present) and rerun complete — nothing
+  from the partial run was reused (it never wrote a file).
+- CTA position (screenshots/round9/cta-check.json, 7 pages × 2 viewports):
+  moved Call button sits in intro section 0, below the intro paragraphs and
+  above the first H2, on emergency (btn 1169, intro 810, first H2 1990),
+  Stockbridge (1169/810/1990), burst (1131/772/1953), Jackson (1205/810/2026),
+  mold (1169/810/1990), homepage (1211/888/2033) and contact (833/772/1654,
+  form present). About is the explained exception: its only cta block is the
+  LAST block (index 16, closing cta), so there is no intro cta to move — its
+  "False" rows are expected, not a defect. H3 colour measured on the homepage:
+  rgb(19,106,138) = #136A8A teal; footer gradient measured on all CTA pages:
+  linear-gradient rgb(11,47,74) → rgb(8,31,49).
+- Images: hashcheck 78 images, 0 collisions vs 31,975 other-site images; no
+  image file changed this round, so no replacements (Round 8's viewed-pixel
+  pass stands, re-confirmed on the new full-page shots: heroes, seconds and
+  cards photographic, no watermark/logo seen). Map iframes = 1 on all 27
+  content pages (tiles blank in the VM browser = known tunnel block, not a
+  defect); privacy/terms have no map by design (legal pages), not a defect.
+- Viewed pixels (fresh crops, ~/workspace/your_files/mcdonough-round9/):
+  topbar-d/m, footer-d/m, h3-section-d/m, emergency-intro-d/m,
+  emergency-intro-btn-d/m, privacy-d/m, terms-d/m, plus labelled PDF
+  mcdonough-round9-review.pdf (13 pages). Two capture notes, both artefacts
+  not defects: (1) footer element shots first showed the sticky header
+  overlapping the footer H3 row — re-shot with the header hidden for the
+  capture only, labelled as such; (2) mobile QA full-page shots show the menu
+  open because the script opens it to verify it. Mobile topbar shows cue +
+  pill only: .topbar-info is display:none below the mobile breakpoint
+  (pre-existing responsive rule, globals.css line ~215); the location text is
+  DOM-present and measured on all pages.
+
+### Verdict: PASS with standing honest limits (unchanged, nothing hidden)
+1. Map tiles in the user's real browser (VM tunnel block). 2. City photos are
+   representative Georgia imagery, not verified photos of each exact town.
+   3. Stock-only image licensing question. 4. 44px footer/prose links.
+   5. Call-bar reading correction (Round 5 reading stands). 6. Contact-form
+   delivery destination (form still honestly tells visitors to call).
+   7. Real domain for canonicals/sitemap (schema URLs currently point at the
+   live GitHub Pages URL). 8. Google favicon pickup timing is Google's call.
+   9. No ranking is promised by the schema work. 10. About mobile hero call at
+   896px is tight inside the fold (sticky-bar overlay note from Round 4 stands).
+- NOT pushed, NOT deployed: local only, as ordered. Push still waits on the
+  user's explicit word (and a fresh token if the earlier one was revoked).

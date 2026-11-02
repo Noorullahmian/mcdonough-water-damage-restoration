@@ -3,7 +3,7 @@
    sections white / mist #F3F8FB. Body 21px desktop, 19px mobile (round 4). */
 :root{
   --navy:#0B2F4A; --navy-2:#123F63; --aqua:#0E8AC0; --aqua-dark:#0B6E99;
-  --crimson:#D9232E; --crimson-dark:#B81C26; --slate:#243B53; --muted:#4A5A6A;
+  --crimson:#D9232E; --crimson-dark:#B81C26; --slate:#243B53; --teal:#136A8A; --muted:#4A5A6A;
   --mist:#F3F8FB; --line:#D9E6EF; --white:#FFFFFF; --gold:#F2A93B;
   --radius:16px; --shadow:0 14px 34px rgba(11,47,74,.12); --shadow-sm:0 6px 18px rgba(11,47,74,.09);
 }
@@ -24,7 +24,7 @@ h1,h2,h3{line-height:1.22;margin:0 0 .6em;text-wrap:balance;overflow-wrap:break-
 h1{font-family:Georgia,"Times New Roman",serif;color:var(--navy);font-size:clamp(2.8rem,5.2vw,3.9rem);font-weight:700;letter-spacing:-.01em}
 h2{color:var(--aqua);font-size:clamp(2.05rem,3.6vw,2.7rem);font-weight:800;letter-spacing:-.01em;padding-bottom:.35em;position:relative}
 h2::after{content:"";display:block;width:72px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--aqua),var(--gold));margin-top:.45em}
-h3{color:var(--slate);font-size:1.42rem;font-weight:800;letter-spacing:-.005em}
+h3{color:var(--teal);font-size:1.42rem;font-weight:800;letter-spacing:-.005em}
 .section-inner h3{margin-top:1.5em}
 .section-inner h3:first-child{margin-top:0}
 p{margin:0 0 1.15em;overflow-wrap:break-word}
@@ -37,7 +37,8 @@ main{overflow-x:clip}
    Old info (hours / county / insurance help) is kept as subordinate text, so nothing is lost. */
 .topbar{background:linear-gradient(135deg,#0B2F4A,#123F63);color:#fff;font-size:1rem;border-bottom:3px solid var(--gold);box-shadow:0 4px 18px rgba(11,47,74,.25)}
 .topbar-inner{max-width:1180px;margin:0 auto;padding:.7rem 1.25rem;display:flex;gap:.9rem;justify-content:center;align-items:center;flex-wrap:wrap;text-align:center}
-.topbar-cue{font-weight:800;letter-spacing:.04em;text-transform:uppercase;font-size:.95rem;color:#DCEBF5;white-space:nowrap}
+.topbar-cue{font-weight:800;letter-spacing:.04em;text-transform:uppercase;font-size:.95rem;color:#DCEBF5;white-space:nowrap;display:inline-flex;align-items:center;gap:.5rem}
+.topbar-icon{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--gold);color:#0B2F4A;box-shadow:0 0 0 4px rgba(242,169,59,.25);flex:none}
 .topbar-call{background:var(--crimson);color:#fff;text-decoration:none;font-weight:800;font-size:1.35rem;letter-spacing:.01em;white-space:nowrap;padding:.5rem 1.25rem;border-radius:999px;box-shadow:0 8px 22px rgba(217,35,46,.45);min-height:44px;display:inline-flex;align-items:center}
 .topbar-call{transition:transform .18s ease,box-shadow .18s ease}
 .topbar-call:hover{background:var(--crimson-dark);transform:translateY(-1px)}
@@ -54,7 +55,10 @@ main{overflow-x:clip}
 .nav-link,.nav-toggle{color:var(--navy);text-decoration:none;font-weight:700;font-size:1.05rem;padding:.7rem .8rem;border-radius:8px;background:none;border:0;cursor:pointer;font-family:inherit}
 .nav-link:hover,.nav-toggle:hover,.nav-toggle[aria-expanded="true"]{color:var(--aqua-dark);background:var(--mist)}
 .nav-item{position:relative}
-.dropdown{position:absolute;top:calc(100% + 6px);left:0;min-width:290px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:.5rem;z-index:70}
+.dropdown{position:absolute;top:calc(100% + 6px);left:0;min-width:290px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:.5rem;z-index:70;max-height:min(70vh,640px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--aqua) var(--mist)}
+.dropdown::-webkit-scrollbar{width:8px}
+.dropdown::-webkit-scrollbar-track{background:var(--mist);border-radius:8px}
+.dropdown::-webkit-scrollbar-thumb{background:var(--aqua);border-radius:8px}
 .dropdown a{display:block;color:var(--slate);text-decoration:none;font-weight:600;font-size:1.02rem;padding:.6rem .75rem;border-radius:8px;white-space:nowrap}
 .dropdown a:hover{background:var(--mist);color:var(--aqua-dark)}
 .header-call{background:var(--crimson);color:#fff;text-decoration:none;font-weight:800;padding:.7rem 1.3rem;border-radius:8px;box-shadow:0 8px 20px rgba(217,35,46,.35);white-space:nowrap;font-size:1.1rem}
@@ -70,7 +74,7 @@ main{overflow-x:clip}
 @media(max-width:820px){
   .main-nav,.header-call{display:none}
   .menu-btn{display:block}
-  .mobile-nav.open{display:block}
+  .mobile-nav.open{display:block;max-height:calc(100dvh - 140px);overflow-y:auto;overscroll-behavior:contain}
   .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:80;background:var(--crimson);color:#fff;text-decoration:none;font-weight:800;justify-content:center;align-items:center;padding:.9rem 1rem;font-size:1.12rem;box-shadow:0 -4px 18px rgba(0,0,0,.2)}
   body{padding-bottom:76px}
   .topbar-inner{justify-content:center;text-align:center}
@@ -170,17 +174,24 @@ tbody tr:hover td{background:#EAF4FA}
 @media(max-width:640px){.figure img{height:260px}}
 .figure figcaption{background:var(--navy);color:#DCEBF5;font-size:1.05rem;padding:.7rem .9rem}
 /* Footer */
-.site-footer{background:var(--navy);color:#DCEBF5;margin-top:0;border-top:3px solid var(--gold)}
+.site-footer{background:linear-gradient(180deg,#0B2F4A,#081F31);color:#DCEBF5;margin-top:0;border-top:3px solid var(--gold)}
 .footer-inner{max-width:1180px;margin:0 auto;padding:3.5rem 1.25rem 1.5rem;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.4rem}
-/* Footer H3 1.25rem wrapped "Water Damage Services" to 2 lines in a 237px column (lone "Services").
-   1.15rem keeps it on one line and is still larger than the pre-round-5 1.05rem. */
-.site-footer h3{color:#fff;font-size:1.15rem;letter-spacing:.01em}
+/* Footer H3 kept at 1.15rem on purpose: 1.25rem wrapped "Water Damage Services" to 2 lines
+   in a 237px column (Round 5 measured). Pretty accent comes from the gold underline, not size. */
+.site-footer h3{color:#fff;font-size:1.15rem;letter-spacing:.01em;padding-bottom:.55em;position:relative}
+.site-footer h3::after{content:"";display:block;width:40px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--gold),var(--aqua));margin-top:.5em}
 .site-footer a{color:#DCEBF5;text-decoration:none}
-.site-footer a:hover{color:#fff;text-decoration:underline}
+.site-footer a:hover{color:var(--gold);text-decoration:none}
 .site-footer ul{list-style:none;padding:0}
 .site-footer li{margin-bottom:.5rem}
-.site-footer li a{display:block;padding:.3rem 0}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.18);padding:1.35rem 1.25rem;text-align:center;font-size:1rem;color:#B9CFDF}
+.site-footer li a{display:block;padding:.3rem 0;transition:transform .15s ease,color .15s ease}
+.site-footer li a:hover{transform:translateX(4px)}
+.site-footer li a::before{content:"›";color:var(--gold);font-weight:800;margin-right:.45rem}
+.footer-brand{display:flex;gap:.65rem;align-items:center}
+.site-footer .brand-mark{width:40px;height:40px;font-size:1.3rem;flex:none}
+.footer-phone{display:inline-block;background:var(--crimson);color:#fff !important;text-decoration:none;font-weight:800;padding:.45rem 1.1rem;border-radius:999px;box-shadow:0 8px 20px rgba(217,35,46,.4);margin:.15rem 0;white-space:nowrap}
+.footer-phone:hover{background:var(--crimson-dark);color:#fff !important}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.25);padding:1.35rem 1.25rem;text-align:center;font-size:1rem;color:#B9CFDF}
 .footer-bottom a{color:#fff;font-weight:700}
 @media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr}}
 @media(max-width:540px){.footer-inner{grid-template-columns:1fr}}
