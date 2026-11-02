@@ -1,0 +1,28 @@
+Tab 1 / H1=24/7 Water Damage Restoration in McDonough, GA blocks={'p': 22, 'cta': 2, 'h2': 10, 'step': 5, 'h3': 9, 'servicecards': 4, 'ul': 3, 'table': 2, 'faq': 10}
+Tab 2 /emergency-water-extraction/ H1=24/7 Emergency Water Extraction in McDonough, GA blocks={'p': 13, 'cta': 2, 'h2': 11, 'step': 5, 'ul': 3, 'table': 1, 'faq': 5}
+Tab 3 /burst-pipe-water-damage/ H1=Burst & Frozen Pipe Water Damage Cleanup in McDonough, GA blocks={'p': 17, 'cta': 2, 'h2': 13, 'step': 5, 'ul': 4, 'faq': 5}
+Tab 4 /flood-damage-cleanup/ H1=Flood & Storm Damage Cleanup in McDonough, GA blocks={'p': 14, 'cta': 2, 'h2': 12, 'ul': 5, 'table': 1, 'faq': 5}
+Tab 5 /sewage-backup-cleanup/ H1=Sewage Backup Cleanup in McDonough, GA blocks={'p': 14, 'cta': 2, 'h2': 13, 'ul': 5, 'faq': 5}
+Tab 6 /ceiling-leak-water-damage/ H1=Ceiling & Roof Leak Water Damage Repair in McDonough, GA blocks={'p': 14, 'cta': 2, 'h2': 12, 'ul': 3, 'table': 1, 'faq': 5}
+Tab 7 /mold-remediation/ H1=Mold Remediation After Water Damage in McDonough, GA blocks={'p': 12, 'cta': 2, 'h2': 12, 'ul': 4, 'table': 1, 'faq': 5}
+Tab 8 /structural-drying/ H1=Structural Drying & Dehumidification in McDonough, GA blocks={'p': 13, 'cta': 2, 'h2': 11, 'ul': 2, 'table': 1, 'faq': 5}
+Tab 9 /commercial-water-damage/ H1=Commercial Water Damage Restoration in McDonough, GA blocks={'p': 11, 'cta': 2, 'h2': 10, 'ul': 4, 'table': 1, 'faq': 5}
+Tab 10 /crawl-space-water-damage/ H1=Crawl Space Water Damage & Drying in McDonough, GA blocks={'p': 12, 'cta': 2, 'h2': 12, 'ul': 4, 'faq': 5}
+Tab 11 /slab-leak-water-damage/ H1=Slab Leak Water Damage Cleanup in McDonough, GA blocks={'p': 12, 'cta': 2, 'h2': 11, 'ul': 3, 'table': 1, 'faq': 5}
+Tab 12 /water-heater-leak-cleanup/ H1=Water Heater Leak & Burst Tank Cleanup in McDonough, GA blocks={'p': 10, 'cta': 2, 'h2': 10, 'ul': 4, 'table': 1, 'faq': 5}
+Tab 13 /appliance-leak-water-damage/ H1=Washing Machine, Dishwasher & Fridge Leak Water Damage in McDonough, GA blocks={'p': 12, 'cta': 2, 'h2': 12, 'ul': 3, 'table': 1, 'faq': 5}
+Tab 14 /ac-leak-water-damage/ H1=AC & HVAC Leak Water Damage Cleanup in McDonough, GA blocks={'p': 11, 'cta': 2, 'h2': 12, 'ul': 4, 'table': 1, 'faq': 5}
+Tab 15 /hardwood-floor-water-damage/ H1=Hardwood Floor Water Damage Drying in McDonough, GA blocks={'p': 13, 'cta': 2, 'h2': 11, 'ul': 4, 'table': 1, 'faq': 5}
+Tab 16 /toilet-overflow-cleanup/ H1=Toilet Overflow & Bathroom Leak Cleanup in McDonough, GA blocks={'p': 12, 'cta': 2, 'h2': 12, 'ul': 4, 'table': 1, 'faq': 5}
+Tab 17 /water-damage-restoration-stockbridge-ga/ H1=24/7 Water Damage Restoration in Stockbridge, GA blocks={'p': 18, 'cta': 2, 'h2': 15, 'ul': 2, 'table': 2, 'step': 5, 'faq': 7}
+Tab 18 /water-damage-restoration-locust-grove-ga/ H1=24/7 Water Damage Restoration in Locust Grove, GA blocks={'p': 18, 'cta': 2, 'h2': 16, 'ul': 2, 'table': 2, 'step': 5, 'faq': 7}
+Tab 19 /water-damage-restoration-hampton-ga/ H1=24/7 Water Damage Restoration in Hampton, GA blocks={'p': 18, 'cta': 2, 'h2': 15, 'ul': 3, 'table': 2, 'step': 6, 'faq': 7}
+Tab 20 /water-damage-restoration-jonesboro-ga/ H1=24/7 Water Damage Restoration in Jonesboro, GA blocks={'p': 16, 'cta': 2, 'h2': 16, 'ul': 2, 'table': 2, 'step': 6, 'faq': 7}
+Tab 21 /water-damage-restoration-lovejoy-ga/ H1=24/7 Water Damage Restoration in Lovejoy, GA blocks={'p': 17, 'cta': 2, 'h2': 17, 'ul': 3, 'table': 2, 'step': 5, 'faq': 7}
+Tab 22 /water-damage-restoration-forest-park-ga/ H1=24/7 Water Damage Restoration in Forest Park, GA blocks={'p': 16, 'cta': 2, 'h2': 16, 'ul': 2, 'table': 2, 'step': 5, 'faq': 7}
+Tab 23 /water-damage-restoration-conyers-ga/ H1=24/7 Water Damage Restoration in Conyers, GA blocks={'p': 15, 'cta': 2, 'h2': 16, 'ul': 3, 'table': 2, 'step': 6, 'faq': 7}
+Tab 24 /water-damage-restoration-griffin-ga/ H1=24/7 Water Damage Restoration in Griffin, GA blocks={'p': 15, 'cta': 2, 'h2': 15, 'ul': 2, 'table': 2, 'step': 6, 'faq': 7}
+Tab 25 /water-damage-restoration-jackson-ga/ H1=24/7 Water Damage Restoration in Jackson, GA blocks={'p': 15, 'cta': 2, 'h2': 15, 'ul': 3, 'table': 2, 'step': 5, 'faq': 7}
+Tab 26 /about-us/ H1=About McDonough Water Damage Restoration blocks={'p': 5, 'h2': 5, 'step': 5, 'ul': 1, 'cta': 1}
+Tab 27 /contact-us/ H1=Get Emergency Water Damage Help in McDonough Now blocks={'p': 5, 'cta': 2, 'h2': 4, 'form': 1, 'step': 9, 'mapmarker': 1}
+Total pages: 27

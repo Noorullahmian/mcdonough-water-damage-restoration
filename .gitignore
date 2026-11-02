@@ -1,0 +1,9 @@
+node_modules/
+.next/
+out/
+screenshots/
+superseded-round5/
+superseded-round6/
+superseded-round7/
+*.log
+.DS_Store

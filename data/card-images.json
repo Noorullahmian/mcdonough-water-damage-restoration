@@ -1,0 +1,98 @@
+{
+ "card:burst-pipe-water-damage": {
+  "src": "/images/mcdonough-card-burst-pipe-water-damage.jpg",
+  "alt": "Burst Pipe Water Damage in McDonough, GA"
+ },
+ "card:flood-damage-cleanup": {
+  "src": "/images/mcdonough-card-flood-damage-cleanup.jpg",
+  "alt": "Flood Damage Cleanup in McDonough, GA"
+ },
+ "card:sewage-backup-cleanup": {
+  "src": "/images/mcdonough-card-sewage-backup-cleanup.jpg",
+  "alt": "Sewage Backup Cleanup in McDonough, GA"
+ },
+ "card:ceiling-leak-water-damage": {
+  "src": "/images/mcdonough-card-ceiling-leak-water-damage.jpg",
+  "alt": "Ceiling Leak Water Damage in McDonough, GA"
+ },
+ "card:mold-remediation": {
+  "src": "/images/mcdonough-card-mold-remediation.jpg",
+  "alt": "Mold Remediation in McDonough, GA"
+ },
+ "card:structural-drying": {
+  "src": "/images/mcdonough-card-structural-drying.jpg",
+  "alt": "Structural Drying in McDonough, GA"
+ },
+ "card:commercial-water-damage": {
+  "src": "/images/mcdonough-card-commercial-water-damage.jpg",
+  "alt": "Commercial Water Damage in McDonough, GA"
+ },
+ "card:crawl-space-water-damage": {
+  "src": "/images/mcdonough-card-crawl-space-water-damage.jpg",
+  "alt": "Crawl Space Water Damage in McDonough, GA"
+ },
+ "card:slab-leak-water-damage": {
+  "src": "/images/mcdonough-card-slab-leak-water-damage.jpg",
+  "alt": "Slab Leak Water Damage in McDonough, GA"
+ },
+ "card:water-heater-leak-cleanup": {
+  "src": "/images/mcdonough-card-water-heater-leak-cleanup.jpg",
+  "alt": "Water Heater Leak Cleanup in McDonough, GA"
+ },
+ "card:appliance-leak-water-damage": {
+  "src": "/images/mcdonough-card-appliance-leak-water-damage.jpg",
+  "alt": "Appliance Leak Water Damage in McDonough, GA"
+ },
+ "card:ac-leak-water-damage": {
+  "src": "/images/mcdonough-card-ac-leak-water-damage.jpg",
+  "alt": "AC Leak Water Damage in McDonough, GA"
+ },
+ "card:hardwood-floor-water-damage": {
+  "src": "/images/mcdonough-card-hardwood-floor-water-damage.jpg",
+  "alt": "Hardwood Floor Water Damage in McDonough, GA"
+ },
+ "card:toilet-overflow-cleanup": {
+  "src": "/images/mcdonough-card-toilet-overflow-cleanup.jpg",
+  "alt": "Toilet Overflow Cleanup in McDonough, GA"
+ },
+ "area:stockbridge-ga": {
+  "src": "/images/mcdonough-area-stockbridge-ga.jpg",
+  "alt": "Water damage restoration in Stockbridge, GA"
+ },
+ "area:locust-grove-ga": {
+  "src": "/images/mcdonough-area-locust-grove-ga.jpg",
+  "alt": "Water damage restoration in Locust Grove, GA"
+ },
+ "area:hampton-ga": {
+  "src": "/images/mcdonough-area-hampton-ga.jpg",
+  "alt": "Water damage restoration in Hampton, GA"
+ },
+ "area:jonesboro-ga": {
+  "src": "/images/mcdonough-area-jonesboro-ga.jpg",
+  "alt": "Water damage restoration in Jonesboro, GA"
+ },
+ "area:lovejoy-ga": {
+  "src": "/images/mcdonough-area-lovejoy-ga.jpg",
+  "alt": "Water damage restoration in Lovejoy, GA"
+ },
+ "area:forest-park-ga": {
+  "src": "/images/mcdonough-area-forest-park-ga.jpg",
+  "alt": "Water damage restoration in Forest Park, GA"
+ },
+ "area:conyers-ga": {
+  "src": "/images/mcdonough-area-conyers-ga.jpg",
+  "alt": "Water damage restoration in Conyers, GA"
+ },
+ "area:griffin-ga": {
+  "src": "/images/mcdonough-area-griffin-ga.jpg",
+  "alt": "Water damage restoration in Griffin, GA"
+ },
+ "area:jackson-ga": {
+  "src": "/images/mcdonough-area-jackson-ga.jpg",
+  "alt": "Water damage restoration in Jackson, GA"
+ },
+ "card:emergency-water-extraction": {
+  "src": "/images/mcdonough-card-emergency-water-extraction.jpg",
+  "alt": "Emergency Water Extraction in McDonough, GA"
+ }
+}
