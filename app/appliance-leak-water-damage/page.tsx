@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Washing Machine & Appliance Leak Water Damage McDonough, GA",
   description: "Washer overflow, dishwasher leak or fridge line leak in your McDonough home? We dry floors, cabinets and ceilings below, 24/7. Call (470) 745-9798.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/appliance-leak-water-damage/" },
 };
 
 export default function Page() {

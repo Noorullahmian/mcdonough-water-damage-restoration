@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Slab Leak Water Damage McDonough, GA Under-Floor Leak Drying",
   description: "Warm spots on the floor, wet carpet with no visible leak, or a spiking water bill in McDonough? We dry slab leak water damage. Call (470) 745-9798.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/slab-leak-water-damage/" },
 };
 
 export default function Page() {

@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Crawl Space Water Removal McDonough, GA | Crawl Space Drying",
   description: "Standing water or a musty, wet crawl space under your McDonough home? We pump it out, dry it and stop the moisture. Call (470) 745-9798.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/crawl-space-water-damage/" },
 };
 
 export default function Page() {

@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy | McDonough Water Damage Restoration",
   description: "How McDonough Water Damage Restoration collects, uses and protects the information you share with us.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/privacy-policy/" },
   robots: { index: false, follow: true },
 };
 
@@ -59,10 +60,10 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@graph": [
-          { "@type": "WebPage", "@id": "https://noorullahmian.github.io/mcdonough-water-damage-restoration/privacy-policy/#webpage", url: "https://noorullahmian.github.io/mcdonough-water-damage-restoration/privacy-policy/", name: "Privacy Policy | McDonough Water Damage Restoration", isPartOf: { "@id": "https://noorullahmian.github.io/mcdonough-water-damage-restoration/#website" }, about: { "@id": "https://noorullahmian.github.io/mcdonough-water-damage-restoration/#organization" }, breadcrumb: { "@id": "https://noorullahmian.github.io/mcdonough-water-damage-restoration/privacy-policy/#breadcrumb" }, inLanguage: "en" },
-          { "@type": "BreadcrumbList", "@id": "https://noorullahmian.github.io/mcdonough-water-damage-restoration/privacy-policy/#breadcrumb", itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://noorullahmian.github.io/mcdonough-water-damage-restoration/" },
-            { "@type": "ListItem", position: 2, name: "Privacy Policy", item: "https://noorullahmian.github.io/mcdonough-water-damage-restoration/privacy-policy/" },
+          { "@type": "WebPage", "@id": "https://mcdonoughwaterdamagerestoration.us/privacy-policy/#webpage", url: "https://mcdonoughwaterdamagerestoration.us/privacy-policy/", name: "Privacy Policy | McDonough Water Damage Restoration", isPartOf: { "@id": "https://mcdonoughwaterdamagerestoration.us/#website" }, about: { "@id": "https://mcdonoughwaterdamagerestoration.us/#organization" }, breadcrumb: { "@id": "https://mcdonoughwaterdamagerestoration.us/privacy-policy/#breadcrumb" }, inLanguage: "en" },
+          { "@type": "BreadcrumbList", "@id": "https://mcdonoughwaterdamagerestoration.us/privacy-policy/#breadcrumb", itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://mcdonoughwaterdamagerestoration.us/" },
+            { "@type": "ListItem", position: 2, name: "Privacy Policy", item: "https://mcdonoughwaterdamagerestoration.us/privacy-policy/" },
           ] },
         ],
       }) }} />

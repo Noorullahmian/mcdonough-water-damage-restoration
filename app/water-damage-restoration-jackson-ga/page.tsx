@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Water Damage Restoration Jackson, GA 30233",
   description: "Septic backup, lake house leak or storm damage in Jackson? Local water damage crews extract, disinfect and dry homes across Butts County, 24/7.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/water-damage-restoration-jackson-ga/" },
 };
 
 export default function Page() {

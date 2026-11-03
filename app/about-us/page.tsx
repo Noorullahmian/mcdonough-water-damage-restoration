@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Us | McDonough Water Damage Restoration",
   description: "Local water damage restoration for McDonough and Henry County homes and businesses: how the work is done, what to expect and the areas served.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/about-us/" },
 };
 
 export default function Page() {

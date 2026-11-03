@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "24/7 Water Damage Restoration in McDonough, GA",
   description: "Water damage restoration in McDonough, GA starts the moment you call. Local water mitigation technicians remove the water, find the moisture you can't see.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/" },
 };
 
 export default function Page() {
@@ -13,7 +14,7 @@ export default function Page() {
   // it by @id, never duplicate it). Facts are exactly the ones already on the site:
   // name, phone, 24-hour opening, McDonough ZIPs + Henry County, existing description.
   // No address, geo, logo, socials, ratings or prices — the site states none of those.
-  const SITE_URL = "https://noorullahmian.github.io/mcdonough-water-damage-restoration";
+  const SITE_URL = "https://mcdonoughwaterdamagerestoration.us";
   const schema = {
     "@context": "https://schema.org",
     "@graph": [

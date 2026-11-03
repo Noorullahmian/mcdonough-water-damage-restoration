@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Water Damage Drying McDonough, GA",
   description: "Walls, floors or ceilings still wet after a leak in McDonough? We dry your home to a measured standard with commercial equipment. Call (470) 745-9798.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/structural-drying/" },
 };
 
 export default function Page() {

@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Burst Pipe Water Damage McDonough, GA",
   description: "Pipe burst in your McDonough home? Shut off the water and call (470) 745-9798. We dry walls, ceilings and floors after frozen or broken pipes, 24/7.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/burst-pipe-water-damage/" },
 };
 
 export default function Page() {

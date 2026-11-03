@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Water Damage Restoration Griffin, GA 30223",
   description: "Crawl space water, burst pipe or flooding in Griffin? Local water damage crews extract and dry older and newer homes across Spalding County, 24/7.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/water-damage-restoration-griffin-ga/" },
 };
 
 export default function Page() {

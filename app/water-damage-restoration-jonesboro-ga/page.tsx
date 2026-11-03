@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Water Damage Restoration Jonesboro, GA 30238",
   description: "Sewer backup, burst pipe or flooded floors in Jonesboro? Local water damage crews extract, disinfect and dry homes across 30238 and 30236, 24/7.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/water-damage-restoration-jonesboro-ga/" },
 };
 
 export default function Page() {

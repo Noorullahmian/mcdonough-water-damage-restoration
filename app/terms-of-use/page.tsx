@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Use | McDonough Water Damage Restoration",
   description: "The terms and conditions for using the McDonough Water Damage Restoration website.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/terms-of-use/" },
   robots: { index: false, follow: true },
 };
 
@@ -53,10 +54,10 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@graph": [
-          { "@type": "WebPage", "@id": "https://noorullahmian.github.io/mcdonough-water-damage-restoration/terms-of-use/#webpage", url: "https://noorullahmian.github.io/mcdonough-water-damage-restoration/terms-of-use/", name: "Terms of Use | McDonough Water Damage Restoration", isPartOf: { "@id": "https://noorullahmian.github.io/mcdonough-water-damage-restoration/#website" }, about: { "@id": "https://noorullahmian.github.io/mcdonough-water-damage-restoration/#organization" }, breadcrumb: { "@id": "https://noorullahmian.github.io/mcdonough-water-damage-restoration/terms-of-use/#breadcrumb" }, inLanguage: "en" },
-          { "@type": "BreadcrumbList", "@id": "https://noorullahmian.github.io/mcdonough-water-damage-restoration/terms-of-use/#breadcrumb", itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://noorullahmian.github.io/mcdonough-water-damage-restoration/" },
-            { "@type": "ListItem", position: 2, name: "Terms of Use", item: "https://noorullahmian.github.io/mcdonough-water-damage-restoration/terms-of-use/" },
+          { "@type": "WebPage", "@id": "https://mcdonoughwaterdamagerestoration.us/terms-of-use/#webpage", url: "https://mcdonoughwaterdamagerestoration.us/terms-of-use/", name: "Terms of Use | McDonough Water Damage Restoration", isPartOf: { "@id": "https://mcdonoughwaterdamagerestoration.us/#website" }, about: { "@id": "https://mcdonoughwaterdamagerestoration.us/#organization" }, breadcrumb: { "@id": "https://mcdonoughwaterdamagerestoration.us/terms-of-use/#breadcrumb" }, inLanguage: "en" },
+          { "@type": "BreadcrumbList", "@id": "https://mcdonoughwaterdamagerestoration.us/terms-of-use/#breadcrumb", itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://mcdonoughwaterdamagerestoration.us/" },
+            { "@type": "ListItem", position: 2, name: "Terms of Use", item: "https://mcdonoughwaterdamagerestoration.us/terms-of-use/" },
           ] },
         ],
       }) }} />

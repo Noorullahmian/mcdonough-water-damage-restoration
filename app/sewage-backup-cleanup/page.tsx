@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Sewage Backup Cleanup McDonough, GA 24/7 Black Water Removal",
   description: "Sewage coming up in your McDonough home? Stop using water and call (470) 745-9798. We remove, disinfect and dry sewage-damaged areas, 24/7.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/sewage-backup-cleanup/" },
 };
 
 export default function Page() {

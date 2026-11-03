@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Water Damage Restoration Hampton, GA 30228",
   description: "Storm damage, crawl space water or a burst pipe in Hampton? Local water damage crews extract, dry and restore homes across 30228, 24/7. Call (470) 745-9798.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/water-damage-restoration-hampton-ga/" },
 };
 
 export default function Page() {

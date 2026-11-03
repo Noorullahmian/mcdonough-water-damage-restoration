@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Mold Remediation McDonough, GA",
   description: "Musty smell or mold after a leak in your McDonough home? We contain it, remove it and fix the moisture behind it. Call (470) 745-9798.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/mold-remediation/" },
 };
 
 export default function Page() {

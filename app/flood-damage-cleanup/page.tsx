@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Flood Damage Cleanup McDonough, GA Storm Water Removal 24/7",
   description: "House flooded after heavy rain in McDonough? We remove floodwater, sanitize and dry your home, 24/7 across Henry County. Call (470) 745-9798.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/flood-damage-cleanup/" },
 };
 
 export default function Page() {

@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Toilet Overflow Cleanup McDonough, GA",
   description: "Toilet overflowed or bathroom leaking into the ceiling below in McDonough? We clean, sanitize and dry it properly, 24/7. Call (470) 745-9798.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/toilet-overflow-cleanup/" },
 };
 
 export default function Page() {

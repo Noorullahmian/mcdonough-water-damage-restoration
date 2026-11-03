@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Commercial Water Damage Restoration McDonough, GA",
   description: "Water damage at your McDonough business, office or rental? We remove water, dry the building and keep downtime low, 24/7. Call (470) 745-9798.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/commercial-water-damage/" },
 };
 
 export default function Page() {

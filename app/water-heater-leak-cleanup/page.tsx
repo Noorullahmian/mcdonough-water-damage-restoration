@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Water Heater Leak Cleanup McDonough, GA",
   description: "Water heater leaking or burst in your McDonough garage, closet or attic? Shut off the water and call (470) 745-9798. We extract and dry it, 24/7.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/water-heater-leak-cleanup/" },
 };
 
 export default function Page() {

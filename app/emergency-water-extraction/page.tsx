@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Emergency Water Removal McDonough, GA 24/7 Water Extraction",
   description: "Standing water in your McDonough home? Our team pumps it out, extracts carpets and starts drying the same visit, 24/7. Call (470) 745-9798.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/emergency-water-extraction/" },
 };
 
 export default function Page() {

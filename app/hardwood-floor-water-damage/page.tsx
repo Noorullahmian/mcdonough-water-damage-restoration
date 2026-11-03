@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Hardwood Floor Water Damage McDonough, GA",
   description: "Wet, cupping or buckling hardwood floors in your McDonough home? We dry wood floors in place whenever they can be saved. Call (470) 745-9798.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/hardwood-floor-water-damage/" },
 };
 
 export default function Page() {

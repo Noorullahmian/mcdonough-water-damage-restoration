@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Water Damage Restoration Conyers, GA 30094",
   description: "Flooding, crawl space water or a burst pipe in Conyers? Local water damage crews extract, disinfect and dry homes across Rockdale County, 24/7.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/water-damage-restoration-conyers-ga/" },
 };
 
 export default function Page() {

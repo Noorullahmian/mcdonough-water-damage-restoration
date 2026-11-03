@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact Us 24/7 | Emergency Water Damage Help McDonough, GA",
   description: "Water damage in McDonough or Henry County? Call (470) 745-9798 any hour or send a request, and a local water damage crew is on the way.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/contact-us/" },
 };
 
 export default function Page() {

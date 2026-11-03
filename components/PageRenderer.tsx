@@ -11,9 +11,9 @@ import cardImages from "../data/card-images.json";
 const BP = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const imgSrc = (s?: string) => (s && s.startsWith("/") ? BP + s : s);
 
-// Live site base (GitHub Pages URL, verified live in the deploy round). Used ONLY as
+// Live site base (real domain, live on Vercel). Used ONLY as
 // schema @id/url identifiers; if a real domain is ever confirmed, repoint this one const.
-const SITE_URL = "https://noorullahmian.github.io/mcdonough-water-damage-restoration";
+const SITE_URL = "https://mcdonoughwaterdamagerestoration.us";
 const ORG_ID = `${SITE_URL}/#organization`;
 const SITE_ID = `${SITE_URL}/#website`;
 // Service display names, copied verbatim from the homepage's own service cards.

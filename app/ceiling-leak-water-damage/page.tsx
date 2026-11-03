@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Ceiling Water Damage Repair McDonough, GA",
   description: "Water dripping from your ceiling in McDonough? We find the source, dry the attic and ceiling, and repair the damage, 24/7. Call (470) 745-9798.",
+  alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/ceiling-leak-water-damage/" },
 };
 
 export default function Page() {
