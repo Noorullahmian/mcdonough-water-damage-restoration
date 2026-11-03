@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: "24/7 Water Damage Restoration in McDonough, GA",
   description: "Water damage restoration in McDonough, GA starts the moment you call. Local water mitigation technicians remove the water, find the moisture you can't see.",
   alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/" },
+  openGraph: {
+    title: "24/7 Water Damage Restoration in McDonough, GA",
+    description: "Water damage restoration in McDonough, GA starts the moment you call. Local water mitigation technicians remove the water, find the moisture you can't see.",
+    url: "https://mcdonoughwaterdamagerestoration.us/",
+    siteName: "McDonough Water Damage Restoration",
+    type: "website",
+    images: [{ url: "https://mcdonoughwaterdamagerestoration.us/images/mcdonough-home-hero.jpg", alt: "Water damage restoration in McDonough, GA" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "24/7 Water Damage Restoration in McDonough, GA",
+    description: "Water damage restoration in McDonough, GA starts the moment you call. Local water mitigation technicians remove the water, find the moisture you can't see.",
+    images: ["https://mcdonoughwaterdamagerestoration.us/images/mcdonough-home-hero.jpg"],
+  },
 };
 
 export default function Page() {

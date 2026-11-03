@@ -5,6 +5,18 @@ export const metadata: Metadata = {
   title: "Privacy Policy | McDonough Water Damage Restoration",
   description: "How McDonough Water Damage Restoration collects, uses and protects the information you share with us.",
   alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/privacy-policy/" },
+  openGraph: {
+    title: "Privacy Policy | McDonough Water Damage Restoration",
+    description: "How McDonough Water Damage Restoration collects, uses and protects the information you share with us.",
+    url: "https://mcdonoughwaterdamagerestoration.us/privacy-policy/",
+    siteName: "McDonough Water Damage Restoration",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Privacy Policy | McDonough Water Damage Restoration",
+    description: "How McDonough Water Damage Restoration collects, uses and protects the information you share with us.",
+  },
   robots: { index: false, follow: true },
 };
 

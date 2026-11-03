@@ -601,3 +601,89 @@ BASE + icons block in app/layout.tsx (only the org <script> moved out of layout)
    896px is tight inside the fold (sticky-bar overlay note from Round 4 stands).
 - NOT pushed, NOT deployed: local only, as ordered. Push still waits on the
   user's explicit word (and a fresh token if the earlier one was revoked).
+
+## TECHNICAL SEO SWEEP (killer level, apex-only domain) — LOCAL ONLY, NOT PUSHED BY THIS SWEEP
+Date: 2026-11-03. Domain: https://mcdonoughwaterdamagerestoration.us/ (apex only, no www
+by design — www absence is NOT a defect here). Base: parent commit caf5719
+(schema URLs to live domain, self-canonicals on 29 pages, sitemap 27 URLs, robots
+Sitemap line) + this sweep's OG/Twitter additions (uncommitted, 29 route files).
+Build verified: fresh `npm run build` with NO NEXT_PUBLIC_BASE_PATH (Vercel parity).
+Audit script: /tmp/techseo_sweep.py (kept out of repo; rerun on final build).
+
+Per-check table (all counts on the FINAL build, 29 content pages; 404 excluded
+where a check does not apply to it):
+1. Titles: 29/29 present, unique, <=60 chars. Violations: 0.
+2. Meta descriptions: 29/29 present, unique, <=160 chars. Violations: 0.
+3. Canonicals: 29/29 present, self-referential, apex domain, trailing-slash
+   consistent with actual URLs. Violations: 0. (Parent's fix, verified, preserved.)
+4. Robots.txt: "User-agent: * / Allow: /" + Sitemap line to the live-domain
+   sitemap. No disallow. Served 200 in local simulation.
+5. Sitemap.xml: valid XML, 27 URLs, 0 duplicates, 0 noindex URLs inside
+   (privacy + terms excluded), all 27 resolve in the local build, every loc
+   equals that page's canonical exactly. Served 200 in local simulation.
+6. Schema: every JSON-LD block parses (0 errors). Zero github.io refs, zero old
+   Pages-subpath refs anywhere in built HTML. WebPage name == <title> 29/29.
+   FAQ schema == visible FAQs: 148 questions checked, 0 missing from page text.
+   Banned: AggregateRating 0, price fields 0, logo/socials 0, geo/address 0,
+   certifications/licenses 0, AI word 0 in schema. (Parent's repoint verified.)
+7. Headings: H1 exactly 1 on 29/29, H1 text unique across pages, 0 heading-level
+   skips (no h1->h3 jumps).
+8. Images: every <img> has non-empty alt, 0 broken srcs in the build, 0 srcs
+   pointing at the old basePath prefix.
+9. Internal links: 0 broken internal hrefs in <main>, 0 body self-links,
+   0 links to the old Pages subpath, trailing-slash consistent (page links
+   end with /, like the canonicals).
+10. Meta robots: noindex,follow ONLY on privacy-policy + terms-of-use; the
+    other 27 pages carry no noindex. 404 page is noindex by Next default
+    (correct, not counted as a content page).
+11. Document head: <html lang="en"> 29/29, charset 29/29 (Next renders
+    charSet="utf-8" — an early sweep-script check flagged this as missing
+    because it matched lowercase only; owned as a script bug, fixed, rerun
+    clean), viewport 29/29.
+12. Open Graph / Twitter: MISSING on 29/29 before this sweep — the ONE genuine
+    blunder found. FIXED (authorized: reuse only existing on-page assets):
+    openGraph + twitter added to all 29 route metadata blocks, reusing each
+    page's own title, description, canonical URL and hero image (absolute
+    live-domain URL, file verified in public/). 27 content pages:
+    og:title/description/url/type=website/siteName + og:image + twitter
+    summary_large_image; og:url == canonical 29/29. 2 legal pages (no hero
+    image by design): same OG/Twitter without images, twitter card "summary".
+    No new images, no invented text, no visible-text change.
+13. 404 page: out/404.html exists, contains real 404/not-found text, is not a
+    copy of the homepage. (Trailing-slash build also emits out/404/index.html;
+    harmless duplicate, same 404 content.)
+14. Mixed content: 0 http:// hrefs/srcs in built HTML.
+15. Visible text UNCHANGED: git diff vs HEAD is +402 insertions, 0 deletions,
+    across exactly the 29 route metadata files (OG/Twitter only). data/pages.json
+    untouched. No visible word, title or description changed. Banned phrases
+    ("free estimate", "certified", "licensed") ZERO in visible text sitewide.
+
+Re-verification on the FINAL build (after OG fix + rebuild): sweep violations 0;
+OG+Twitter present 29/29; og:url == canonical 29/29; FAQ 148/148; JSON 0 errors;
+local HTTP simulation 200 on /, /sitemap.xml, /robots.txt,
+/emergency-water-extraction/, /privacy-policy/,
+/water-damage-restoration-jackson-ga/.
+
+Defects fixed by this sweep: 1 (OG/Twitter missing sitewide). Everything else
+in the 15-point checklist already passed on parent's caf5719 tree.
+
+COULD NOT VERIFY (state honestly, do not claim): live-server behaviour after
+deploy (Vercel response headers, live sitemap/canonical/schema served from the
+real domain, Google Search Console indexing) — this sweep ran on the local
+Vercel-parity build only, by order. Live re-verification after the push is
+still owed. True mobile-viewport rendering was covered by Round 9 local QA,
+not re-run in this sweep (no visual/render checks in scope here).
+
+Remaining honest limits (unchanged): map tiles in a real browser; city photos
+are representative Georgia imagery, not verified exact-town photos; stock-only
+licensing question; contact-form delivery destination (form honestly tells
+visitors to call); Google favicon pickup timing; no ranking promised by any
+schema/technical work; www intentionally absent (apex-only domain, per user).
+
+PUSH READINESS: tree is push-ready for ONE commit + push to main (Vercel
+auto-deploys from main): commit exactly the 29 modified route files (OG/Twitter
+metadata only) — parent's caf5719 is already HEAD == origin/main per the
+cached remote ref, so this is a second, OG-only push, not a combined one.
+This sweep committed and pushed NOTHING, touched no remote, DNS or Vercel
+setting. After pushing, re-verify live: sitemap 200, canonicals, schema
+@ids on the live domain, noindex on the 2 legal pages.

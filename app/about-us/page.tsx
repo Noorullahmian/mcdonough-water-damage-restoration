@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: "About Us | McDonough Water Damage Restoration",
   description: "Local water damage restoration for McDonough and Henry County homes and businesses: how the work is done, what to expect and the areas served.",
   alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/about-us/" },
+  openGraph: {
+    title: "About Us | McDonough Water Damage Restoration",
+    description: "Local water damage restoration for McDonough and Henry County homes and businesses: how the work is done, what to expect and the areas served.",
+    url: "https://mcdonoughwaterdamagerestoration.us/about-us/",
+    siteName: "McDonough Water Damage Restoration",
+    type: "website",
+    images: [{ url: "https://mcdonoughwaterdamagerestoration.us/images/mcdonough-about-us-hero.jpg", alt: "About McDonough Water Damage Restoration" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | McDonough Water Damage Restoration",
+    description: "Local water damage restoration for McDonough and Henry County homes and businesses: how the work is done, what to expect and the areas served.",
+    images: ["https://mcdonoughwaterdamagerestoration.us/images/mcdonough-about-us-hero.jpg"],
+  },
 };
 
 export default function Page() {

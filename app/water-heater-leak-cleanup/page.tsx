@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: "Water Heater Leak Cleanup McDonough, GA",
   description: "Water heater leaking or burst in your McDonough garage, closet or attic? Shut off the water and call (470) 745-9798. We extract and dry it, 24/7.",
   alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/water-heater-leak-cleanup/" },
+  openGraph: {
+    title: "Water Heater Leak Cleanup McDonough, GA",
+    description: "Water heater leaking or burst in your McDonough garage, closet or attic? Shut off the water and call (470) 745-9798. We extract and dry it, 24/7.",
+    url: "https://mcdonoughwaterdamagerestoration.us/water-heater-leak-cleanup/",
+    siteName: "McDonough Water Damage Restoration",
+    type: "website",
+    images: [{ url: "https://mcdonoughwaterdamagerestoration.us/images/mcdonough-water-heater-leak-cleanup-hero.jpg", alt: "Water heater leak cleanup in McDonough, GA" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Water Heater Leak Cleanup McDonough, GA",
+    description: "Water heater leaking or burst in your McDonough garage, closet or attic? Shut off the water and call (470) 745-9798. We extract and dry it, 24/7.",
+    images: ["https://mcdonoughwaterdamagerestoration.us/images/mcdonough-water-heater-leak-cleanup-hero.jpg"],
+  },
 };
 
 export default function Page() {

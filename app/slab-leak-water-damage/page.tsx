@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: "Slab Leak Water Damage McDonough, GA Under-Floor Leak Drying",
   description: "Warm spots on the floor, wet carpet with no visible leak, or a spiking water bill in McDonough? We dry slab leak water damage. Call (470) 745-9798.",
   alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/slab-leak-water-damage/" },
+  openGraph: {
+    title: "Slab Leak Water Damage McDonough, GA Under-Floor Leak Drying",
+    description: "Warm spots on the floor, wet carpet with no visible leak, or a spiking water bill in McDonough? We dry slab leak water damage. Call (470) 745-9798.",
+    url: "https://mcdonoughwaterdamagerestoration.us/slab-leak-water-damage/",
+    siteName: "McDonough Water Damage Restoration",
+    type: "website",
+    images: [{ url: "https://mcdonoughwaterdamagerestoration.us/images/mcdonough-slab-leak-water-damage-hero.jpg", alt: "Slab leak water damage in McDonough, GA" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Slab Leak Water Damage McDonough, GA Under-Floor Leak Drying",
+    description: "Warm spots on the floor, wet carpet with no visible leak, or a spiking water bill in McDonough? We dry slab leak water damage. Call (470) 745-9798.",
+    images: ["https://mcdonoughwaterdamagerestoration.us/images/mcdonough-slab-leak-water-damage-hero.jpg"],
+  },
 };
 
 export default function Page() {

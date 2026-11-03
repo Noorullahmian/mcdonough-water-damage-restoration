@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: "Sewage Backup Cleanup McDonough, GA 24/7 Black Water Removal",
   description: "Sewage coming up in your McDonough home? Stop using water and call (470) 745-9798. We remove, disinfect and dry sewage-damaged areas, 24/7.",
   alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/sewage-backup-cleanup/" },
+  openGraph: {
+    title: "Sewage Backup Cleanup McDonough, GA 24/7 Black Water Removal",
+    description: "Sewage coming up in your McDonough home? Stop using water and call (470) 745-9798. We remove, disinfect and dry sewage-damaged areas, 24/7.",
+    url: "https://mcdonoughwaterdamagerestoration.us/sewage-backup-cleanup/",
+    siteName: "McDonough Water Damage Restoration",
+    type: "website",
+    images: [{ url: "https://mcdonoughwaterdamagerestoration.us/images/mcdonough-sewage-backup-cleanup-hero.jpg", alt: "Sewage backup cleanup in McDonough, GA" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sewage Backup Cleanup McDonough, GA 24/7 Black Water Removal",
+    description: "Sewage coming up in your McDonough home? Stop using water and call (470) 745-9798. We remove, disinfect and dry sewage-damaged areas, 24/7.",
+    images: ["https://mcdonoughwaterdamagerestoration.us/images/mcdonough-sewage-backup-cleanup-hero.jpg"],
+  },
 };
 
 export default function Page() {

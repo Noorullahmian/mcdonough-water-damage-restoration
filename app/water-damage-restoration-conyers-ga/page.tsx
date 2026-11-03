@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: "Water Damage Restoration Conyers, GA 30094",
   description: "Flooding, crawl space water or a burst pipe in Conyers? Local water damage crews extract, disinfect and dry homes across Rockdale County, 24/7.",
   alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/water-damage-restoration-conyers-ga/" },
+  openGraph: {
+    title: "Water Damage Restoration Conyers, GA 30094",
+    description: "Flooding, crawl space water or a burst pipe in Conyers? Local water damage crews extract, disinfect and dry homes across Rockdale County, 24/7.",
+    url: "https://mcdonoughwaterdamagerestoration.us/water-damage-restoration-conyers-ga/",
+    siteName: "McDonough Water Damage Restoration",
+    type: "website",
+    images: [{ url: "https://mcdonoughwaterdamagerestoration.us/images/mcdonough-water-damage-restoration-conyers-ga-hero.jpg", alt: "Water damage restoration in Conyers, GA" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Water Damage Restoration Conyers, GA 30094",
+    description: "Flooding, crawl space water or a burst pipe in Conyers? Local water damage crews extract, disinfect and dry homes across Rockdale County, 24/7.",
+    images: ["https://mcdonoughwaterdamagerestoration.us/images/mcdonough-water-damage-restoration-conyers-ga-hero.jpg"],
+  },
 };
 
 export default function Page() {

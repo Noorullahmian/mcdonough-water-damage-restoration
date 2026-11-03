@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: "Commercial Water Damage Restoration McDonough, GA",
   description: "Water damage at your McDonough business, office or rental? We remove water, dry the building and keep downtime low, 24/7. Call (470) 745-9798.",
   alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/commercial-water-damage/" },
+  openGraph: {
+    title: "Commercial Water Damage Restoration McDonough, GA",
+    description: "Water damage at your McDonough business, office or rental? We remove water, dry the building and keep downtime low, 24/7. Call (470) 745-9798.",
+    url: "https://mcdonoughwaterdamagerestoration.us/commercial-water-damage/",
+    siteName: "McDonough Water Damage Restoration",
+    type: "website",
+    images: [{ url: "https://mcdonoughwaterdamagerestoration.us/images/mcdonough-commercial-water-damage-hero.jpg", alt: "Commercial water damage restoration in McDonough, GA" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Commercial Water Damage Restoration McDonough, GA",
+    description: "Water damage at your McDonough business, office or rental? We remove water, dry the building and keep downtime low, 24/7. Call (470) 745-9798.",
+    images: ["https://mcdonoughwaterdamagerestoration.us/images/mcdonough-commercial-water-damage-hero.jpg"],
+  },
 };
 
 export default function Page() {

@@ -5,6 +5,18 @@ export const metadata: Metadata = {
   title: "Terms of Use | McDonough Water Damage Restoration",
   description: "The terms and conditions for using the McDonough Water Damage Restoration website.",
   alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/terms-of-use/" },
+  openGraph: {
+    title: "Terms of Use | McDonough Water Damage Restoration",
+    description: "The terms and conditions for using the McDonough Water Damage Restoration website.",
+    url: "https://mcdonoughwaterdamagerestoration.us/terms-of-use/",
+    siteName: "McDonough Water Damage Restoration",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Terms of Use | McDonough Water Damage Restoration",
+    description: "The terms and conditions for using the McDonough Water Damage Restoration website.",
+  },
   robots: { index: false, follow: true },
 };
 

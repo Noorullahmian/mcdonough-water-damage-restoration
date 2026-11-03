@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: "Water Damage Restoration Griffin, GA 30223",
   description: "Crawl space water, burst pipe or flooding in Griffin? Local water damage crews extract and dry older and newer homes across Spalding County, 24/7.",
   alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/water-damage-restoration-griffin-ga/" },
+  openGraph: {
+    title: "Water Damage Restoration Griffin, GA 30223",
+    description: "Crawl space water, burst pipe or flooding in Griffin? Local water damage crews extract and dry older and newer homes across Spalding County, 24/7.",
+    url: "https://mcdonoughwaterdamagerestoration.us/water-damage-restoration-griffin-ga/",
+    siteName: "McDonough Water Damage Restoration",
+    type: "website",
+    images: [{ url: "https://mcdonoughwaterdamagerestoration.us/images/mcdonough-water-damage-restoration-griffin-ga-hero.jpg", alt: "Water damage restoration in Griffin, GA" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Water Damage Restoration Griffin, GA 30223",
+    description: "Crawl space water, burst pipe or flooding in Griffin? Local water damage crews extract and dry older and newer homes across Spalding County, 24/7.",
+    images: ["https://mcdonoughwaterdamagerestoration.us/images/mcdonough-water-damage-restoration-griffin-ga-hero.jpg"],
+  },
 };
 
 export default function Page() {

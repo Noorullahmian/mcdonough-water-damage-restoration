@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: "Washing Machine & Appliance Leak Water Damage McDonough, GA",
   description: "Washer overflow, dishwasher leak or fridge line leak in your McDonough home? We dry floors, cabinets and ceilings below, 24/7. Call (470) 745-9798.",
   alternates: { canonical: "https://mcdonoughwaterdamagerestoration.us/appliance-leak-water-damage/" },
+  openGraph: {
+    title: "Washing Machine & Appliance Leak Water Damage McDonough, GA",
+    description: "Washer overflow, dishwasher leak or fridge line leak in your McDonough home? We dry floors, cabinets and ceilings below, 24/7. Call (470) 745-9798.",
+    url: "https://mcdonoughwaterdamagerestoration.us/appliance-leak-water-damage/",
+    siteName: "McDonough Water Damage Restoration",
+    type: "website",
+    images: [{ url: "https://mcdonoughwaterdamagerestoration.us/images/mcdonough-appliance-leak-water-damage-hero.jpg", alt: "Appliance leak water damage in McDonough, GA" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Washing Machine & Appliance Leak Water Damage McDonough, GA",
+    description: "Washer overflow, dishwasher leak or fridge line leak in your McDonough home? We dry floors, cabinets and ceilings below, 24/7. Call (470) 745-9798.",
+    images: ["https://mcdonoughwaterdamagerestoration.us/images/mcdonough-appliance-leak-water-damage-hero.jpg"],
+  },
 };
 
 export default function Page() {
